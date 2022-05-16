@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.microservices.training</groupId>
-	<artifactId>SpringCloudEurekaServer</artifactId>
+	<artifactId>SpringCloudGatewayService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringCloudEurekaServer</name>
-	<description>Demo project for Spring Boot Cloud Eureka Server</description>
+	<name>SpringCloudGatewayService</name>
+	<description>Demo project for Spring Boot Cloud Gateway Service</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.2</spring-cloud.version>
@@ -20,28 +20,27 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
 		<dependency>
-		    <groupId>com.sun.jersey.contribs</groupId>
-		    <artifactId>jersey-apache-client4</artifactId>
-		    <version>1.19.4</version>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-test</artifactId>
+			<scope>test</scope>
 		</dependency>
-				
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
