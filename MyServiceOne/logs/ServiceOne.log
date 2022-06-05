@@ -1,0 +1,56 @@
+2022-06-03 17:54:00.538  INFO [microservice#1,,] 31805 --- [main] c.m.training.MyServiceOneApplication     : Starting MyServiceOneApplication using Java 15.0.1 on shubham-HP-Notebook with PID 31805 (/home/shubham/Work/Spring-Workspace/MyServiceOne/target/classes started by shubham in /home/shubham/Work/Spring-Workspace/MyServiceOne)
+2022-06-03 17:54:00.559  INFO [microservice#1,,] 31805 --- [main] c.m.training.MyServiceOneApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-06-03 17:54:22.888  INFO [microservice#1,,] 31805 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1b9f2140-dea9-3cca-a65d-0b8b57966096
+2022-06-03 17:54:28.519  INFO [microservice#1,,] 31805 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-06-03 17:54:28.534  INFO [microservice#1,,] 31805 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-03 17:54:28.535  INFO [microservice#1,,] 31805 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-03 17:54:29.289  INFO [microservice#1,,] 31805 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-03 17:54:29.290  INFO [microservice#1,,] 31805 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 27274 ms
+2022-06-03 17:54:31.002  WARN [microservice#1,,] 31805 --- [pool-1-thread-1] o.s.c.s.a.z.ZipkinAutoConfiguration      : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Read timed out; nested exception is java.net.SocketTimeoutException: Read timed out}]
+2022-06-03 17:54:32.769  INFO [microservice#1,,] 31805 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-03 17:54:32.807  INFO [microservice#1,,] 31805 --- [main] c.m.training.MyServiceOneApplication     : Started MyServiceOneApplication in 40.935 seconds (JVM running for 53.13)
+2022-06-03 17:58:58.738  INFO [microservice#1,cdc7dae30ce7a91d,cdc7dae30ce7a91d] 31805 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-03 17:58:58.774  INFO [microservice#1,cdc7dae30ce7a91d,cdc7dae30ce7a91d] 31805 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-03 17:58:58.778  INFO [microservice#1,cdc7dae30ce7a91d,cdc7dae30ce7a91d] 31805 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-06-03 17:58:58.855  INFO [microservice#1,cdc7dae30ce7a91d,cdc7dae30ce7a91d] 31805 --- [http-nio-8081-exec-1] c.m.t.controller.AppOneRestController    : Inside microservice#1
+2022-06-03 17:59:00.233  INFO [microservice#1,cdc7dae30ce7a91d,cdc7dae30ce7a91d] 31805 --- [http-nio-8081-exec-1] c.m.t.controller.AppOneRestController    : response by microservice#1 returning from microservice#2
+2022-06-03 17:59:02.353  WARN [microservice#1,,] 31805 --- [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2022-06-03 17:59:03.226  WARN [microservice#1,,] 31805 --- [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 2 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Read timed out; nested exception is java.net.SocketTimeoutException: Read timed out)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Read timed out; nested exception is java.net.SocketTimeoutException: Read timed out
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.cloud.sleuth.zipkin2.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateWrapper.java:67) ~[spring-cloud-sleuth-zipkin-3.1.3.jar:3.1.3]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:660) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.post(RestTemplateSender.java:51) ~[spring-cloud-sleuth-zipkin-3.1.3.jar:3.1.3]
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.lambda$new$0(RestTemplateSender.java:44) ~[spring-cloud-sleuth-zipkin-3.1.3.jar:3.1.3]
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender.post(HttpSender.java:137) ~[spring-cloud-sleuth-zipkin-3.1.3.jar:3.1.3]
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender$HttpPostCall.doExecute(HttpSender.java:150) ~[spring-cloud-sleuth-zipkin-3.1.3.jar:3.1.3]
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender$HttpPostCall.doExecute(HttpSender.java:140) ~[spring-cloud-sleuth-zipkin-3.1.3.jar:3.1.3]
+	at zipkin2.Call$Base.execute(Call.java:391) ~[zipkin-2.23.2.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299) ~[zipkin-reporter-2.16.3.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378) ~[zipkin-reporter-2.16.3.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:981) ~[na:na]
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244) ~[na:na]
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284) ~[na:na]
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:754) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1623) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1528) ~[na:na]
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527) ~[na:na]
+	at org.springframework.http.client.SimpleClientHttpResponse.getRawStatusCode(SimpleClientHttpResponse.java:55) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.client.DefaultResponseErrorHandler.hasError(DefaultResponseErrorHandler.java:61) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:807) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:777) ~[spring-web-5.3.20.jar:5.3.20]
+	... 11 common frames omitted
+
+2022-06-03 18:36:18.075  INFO [microservice#1,81fba903ba9b5aaa,81fba903ba9b5aaa] 31805 --- [http-nio-8081-exec-3] c.m.t.controller.AppOneRestController    : Inside microservice#1
+2022-06-03 18:36:18.135  INFO [microservice#1,81fba903ba9b5aaa,81fba903ba9b5aaa] 31805 --- [http-nio-8081-exec-3] c.m.t.controller.AppOneRestController    : response by microservice#1 returning from microservice#2
+2022-06-03 18:38:21.583  INFO [microservice#1,,] 31805 --- [RMI TCP Connection(54)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-06-03 18:38:22.726  INFO [microservice#1,,] 31805 --- [Thread-2] o.s.c.s.a.z.ZipkinAutoConfiguration      : Flushing remaining spans on shutdown
